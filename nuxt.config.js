@@ -1,7 +1,11 @@
 export default {
   // Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
   ssr: false,
-
+  server: {
+    port: 3005,
+    host: '0.0.0.0',
+    'Access-Control-Allow-Origin': '*',
+  },
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: 'qiankun-base-nuxt2',
@@ -37,11 +41,16 @@ export default {
     // https://go.nuxtjs.dev/eslint
     '@nuxtjs/eslint-module'
   ],
+  // MFE
+  MFE: {
+    force: true
+  },
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     // https://go.nuxtjs.dev/axios
-    '@nuxtjs/axios'
+    '@nuxtjs/axios',
+    '@femessage/nuxt-micro-frontend' ,
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
